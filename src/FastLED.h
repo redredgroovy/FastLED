@@ -493,13 +493,13 @@ public:
 	/// Set the maximum power to be used, given in milliwatts
 	/// @param milliwatts - the max power draw desired, in milliwatts
 	inline void setMaxPowerInMilliWatts(uint32_t milliwatts) {
-    if( m_pPowerFunc == NULL) { m_pPowerFunc = &calculate_max_brightness_for_power_mW; }
-    m_nPowerData = milliwatts;
-  }
+		if( m_pPowerFunc == NULL) { m_pPowerFunc = &calculate_max_brightness_for_power_mW; }
+		m_nPowerData = milliwatts;
+	}
 
-  /// Override the built-in power scaling function
-  /// @param func - Function pointer to a custom power_func
-  inline void setMaxPowerFunction(power_func fptr) { m_pPowerFunc = fptr; }
+	/// Override the built-in power scaling function
+	/// @param func - Function pointer to a custom power_func
+	inline void setMaxPowerFunction(power_func fptr) { m_pPowerFunc = fptr; }
 
 	/// Update all our controllers with the current led colors, using the passed in brightness
 	/// @param scale temporarily override the scale
